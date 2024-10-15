@@ -14,7 +14,7 @@ test('First Playwright test', async ({broswer, page})=>
         await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
 });
 
-test('Browser Context Playwright test', async ({broswer, page})=>
+test('Browser Context Playwright test', async ({broswer,page})=>
 {
         chrome - plugins/ cookies
             const context = await broswer.newContext();
