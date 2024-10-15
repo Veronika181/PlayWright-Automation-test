@@ -5,7 +5,8 @@ const {test} = require('@playwright/test'); //module @playwright/test
 test('First Playwright test', function()
 {
 //playwright code-
-//step1
-//step2
-//step3
+//step1 - open browser
+//step2 - enter u/p 2seconds
+//step3 - click 
+
 });
