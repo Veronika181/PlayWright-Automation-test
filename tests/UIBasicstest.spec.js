@@ -14,12 +14,12 @@ test('First Playwright test', async ({broswer, page})=>
         await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
 });
 
-test('Browser Context Playwright test', async ({broswer,page})=>
+test('Browser Context Playwright test', async ({broswer})=>
 {
-        chrome - plugins/ cookies
-            const context = await broswer.newContext();
-            const page = await context.newPage();
-            await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+    chrome - plugins/ cookies
+        const context = await broswer.newContext();
+        const page = await context.newPage();
+        await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
 });
  
 test('Page Playwright test', async ({page})=>
