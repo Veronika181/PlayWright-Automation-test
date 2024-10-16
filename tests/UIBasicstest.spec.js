@@ -14,15 +14,23 @@ test('First Playwright test', async ({browser, page})=>
         await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
 });
 
-test('Browser Context Playwright test', async ({browser})=>
+test.only('Browser Context Playwright test', async ({browser})=>
 {
     //chrome - plugins/ cookies
       const context = await browser.newContext();
       const page = await context.newPage();
       await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
       console.log(await page.title());
-});
+      //css, xpath
+      await page.locator('#username').fill("rahulshetty");
+      await page.locator("[type='password']").fill("learning")
+      await page.locator("#signInBtn").click();
+      //webdriverwait
+      console.log(await page.locator("[style*='block']").textContent());
+      await expect(page.locator("[style*='block']")).toContainText('Incorrect');
+})
  
+
 test.only('Page Playwright test', async ({page})=>
 {
       await page.goto("https://google.com");
@@ -31,3 +39,13 @@ test.only('Page Playwright test', async ({page})=>
     await expect(page).toHaveTitle("Google");
       //
 });
+
+test('@Web Browser Context-Validating Error login', async ({browser})=>
+    {
+          const context = await browser.newContext();
+          const page = await context.newPage();
+          await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+          console.log(await page.title());
+          //css         type, fill 
+          await page.locator('#username').fill("learning");
+    });
